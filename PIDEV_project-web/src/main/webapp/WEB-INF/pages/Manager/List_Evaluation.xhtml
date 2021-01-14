@@ -1,0 +1,107 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/tempUser.xhtml">
+	<ui:param name="page_name" value="list Evaluation" />
+	<ui:define name="content">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
+  <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+  <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
+
+<script>
+	
+    $(document).ready( function () {
+    $('.myTable').DataTable();
+	} );
+	</script>
+
+
+<style>
+.textnn {
+	left: 40%;
+	transform: translateX(20%);
+}
+.img1 {
+	left: 40%;
+	transform: translateX(95%);
+}
+</style>
+
+<img src="../../img/icon/list.png" />
+
+<h:form class="img1">
+				<h:commandLink action="#{loginBean.doLogout()}">
+					<img src="../../img/exit.png" />
+				</h:commandLink>
+			</h:form>
+
+<h1>liste des Evaluations</h1>
+
+
+
+		<h:form id="studentForm" class="text-center border border-light p-5">
+		
+		
+		<div class="textnn">
+				<h:commandButton value="Ajouter une nouvelle evaluation"
+					class="btn btn-success btnSpace" action="Evaluation _choix" />
+					
+					
+					&#160;&#160;&#160;&#160;
+					<h:commandButton value="modifier Evaluation"
+					class="btn btn-warning " action="ModifEval"/>
+		</div>
+			
+			<br></br>
+			<br></br>
+			
+			
+			
+			<h:dataTable styleClass="myTable"
+				value="#{EvaluationBean.evaluations}" var="Eval">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Type d'evaluation" />
+					</f:facet>
+					<h:outputText value="#{Eval.type}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Titre Evaluation</f:facet>
+					<h:outputText value="#{Eval.titre_Eval}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Description evaluation" />
+					</f:facet>
+					<h:outputText value="#{Eval.desc_Eval}" />
+				</h:column>
+
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Date Evaluation" />
+					</f:facet>
+					<h:outputText value="#{Eval.DATE_EVAL}" />
+				</h:column>
+				
+			
+					
+			</h:dataTable>
+			
+			
+			
+			
+			
+			
+			
+			
+		</h:form>
+
+
+	</ui:define>
+
+
+</ui:composition>

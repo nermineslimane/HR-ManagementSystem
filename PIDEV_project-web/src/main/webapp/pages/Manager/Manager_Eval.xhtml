@@ -1,0 +1,562 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtmll/DTD/xhtmll-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/tempUser/template.xhtml"
+>
+
+	<ui:define name="title">
+		<title>Effecuter une Evaluation</title>
+	</ui:define>
+
+
+	<ui:define name="content">
+	
+	<img src="../../img/icon/add-file.png"></img>
+<h1>Nouvelle Evaluation Programmer</h1>
+		
+			
+			<h:form enctype="multipart/form-data">
+								<div class="form-group">
+									<label>Titre Evaluation</label>
+									<h:inputText id="titreEval" type="text" class="form-control"
+										value="#{EvaluationBean.titre_eval}"
+										aria-describedby="emailHelp"
+										placeholder="Entrer un Titre d'evaluation" name="titre"
+										validatorMessage="User name is required" />
+								</div>
+
+
+								<div class="form-group">
+									<label>Description de l'evaluation</label>
+									<h:inputTextarea type="password" class="form-control"
+										id="desceval" placeholder="description" name="desc"
+										value="#{EvaluationBean.desc_eval}"
+										validatorMessage="User name is required" />
+								</div>
+
+								<div class="form-group">
+									<label>Nom Employe</label>
+									
+									<h:selectOneMenu class="custom-select custom-select-sm"
+										value="#{EvaluationBean.selectUserById}">
+										<f:selectItems value="#{EvaluationBean.users}" var="user"
+											itemValue="#{user.id}" itemLabel="#{user.nom}" />
+									</h:selectOneMenu>
+								</div>
+								
+								
+								
+ <!-- ******************************************************************************************************* -->
+ 
+ <h1>Formulaire D'Evaluation </h1>
+<p>vou etes oblige de le grille d'evaluation ci dessous</p>
+<img src="../../img/grille d'evaluation.png"/>
+<br></br>
+
+
+
+			<h:form class="text-center border border-light p-5">
+
+				<div class="box">
+					<h1>Framwork</h1>
+					<br></br>
+				</div>
+
+
+				<!-- Framork -->
+				<!--Django  -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Asp.net</p>
+					</div>
+					<div class="col">
+						
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+								<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.score_Manager}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+					</div>
+				</div>
+
+
+	<!-- Angular -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Angular</p>
+					</div>
+					<div class="col">
+					
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val2}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+					</div>
+				</div>
+
+
+			<!-- REACT JS -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">REACT JS</p>
+					</div>
+					<div class="col">
+
+					
+
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val3}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+					</div>
+				</div>
+
+
+
+
+			<!-- VUE JS -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">VUE JS</p>
+					</div>
+					<div class="col">
+						
+
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val4}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+					</div>
+				</div>
+
+
+
+		<!-- VUE JS -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">VUE JS</p>
+					</div>
+					<div class="col">
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val5}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+
+					</div>
+				</div>
+
+
+
+				<!-- Laravel -->
+
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Laravel</p>
+					</div>
+					<div class="col">
+
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio id="console" unselectable="true"
+								value="#{EvaluationBean.val6}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+						</h:panelGrid>
+
+
+					</div>
+				</div>
+
+				
+				<!-- Spring -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Spring</p>
+					</div>
+					<div class="col">
+						
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+							
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val7}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+					</div>
+				</div>
+
+
+			<!-- Rails -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Rails</p>
+					</div>
+					<div class="col">
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val8}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+					</div>
+				</div>
+				
+				
+				<!-- Symfony -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Symfony</p>
+					</div>
+					<div class="col">
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val9}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+					</div>
+				</div>
+				
+				<!-- Express.js -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Express.js</p>
+					</div>
+					<div class="col">
+
+						
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val10}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+				<!-- langage de programmation -->
+
+				<h1>Langage de programmation</h1>
+				<br></br>
+					<!-- Javascript -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Javascript</p>
+					</div>
+					<div class="col">
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val11}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+					</div>
+				</div>
+
+			<!-- Python. -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Python</p>
+					</div>
+					<div class="col">
+
+						
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val12}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+					</div>
+				</div>
+
+
+
+			<!-- Java -->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Java</p>
+					</div>
+					<div class="col">
+
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val12}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+
+					</div>
+				</div>
+
+
+			<!-- Ruby-->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">Ruby</p>
+					</div>
+					<div class="col">
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val12}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+					</div>
+				</div>
+
+
+				<!-- R-->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">R</p>
+					</div>
+					<div class="col">
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val12}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+					</div>
+				</div>
+
+
+				<!-- C#-->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">C#</p>
+					</div>
+					<div class="col">
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val12}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+
+					</div>
+				</div>
+				
+			<!-- C-->
+				<div class="row">
+
+					<div class="col">
+						<p class="h4 mb-4">C</p>
+					</div>
+					<div class="col">
+						<h:panelGrid columns="3" style="margin-bottom:10px"
+							cellpadding="5">
+
+							<p:selectOneRadio unselectable="true"
+								value="#{EvaluationBean.val12}">
+								<f:selectItem itemLabel=" 1" itemValue="1" />
+								<f:selectItem itemLabel=" 2" itemValue="2" />
+								<f:selectItem itemLabel=" 3" itemValue="3" />
+								<f:selectItem itemLabel=" 4" itemValue="4" />
+								<f:selectItem itemLabel=" 5" itemValue="5" />
+							</p:selectOneRadio>
+
+						</h:panelGrid>
+
+
+					</div>
+				</div>
+		
+							
+								 <h:commandButton action="#{EvaluationBean.addEvaluationM()}"
+											class="btn btn-info btn-block" value="Ajouter Evaluation" onclick="if (!confirm('Evaluation ajouter avec success')) return false"/>
+					
+					</h:form>	
+					
+	</h:form>
+			
+	</ui:define>
+
+
+</ui:composition>

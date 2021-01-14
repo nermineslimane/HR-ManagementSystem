@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  line-height: 1.4;
+  box-sizing: border-box;
+	font-size: 16px;
+}
+
+.btn {
+	border: none;
+	border-radius: 4px;
+	text-transform: uppercase;
+	padding: 10px 18px;
+	font-size: 16px;
+	letter-spacing: 0.7px;
+}
+
+.btn-default {
+	background: #eceef0;
+}
+
+/*Copy from this point*/
+
+.wrapper .col-row{
+  padding: 40px;
+}
+
+.col-row {
+  clear: both;
+}
+
+.col-row:before, .col-row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.col-row [class*="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height:1px;
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.col-row .col-70 {
+  width: 70%;
+}
+.col-row .col-30 {
+  width: 30%;
+}
+
+.wrapper .upper-col {
+  color: #fff;
+  background: #184e8d;
+}
+
+.wrapper .upper-col .competence-name {
+  font-size: 28px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.wrapper .upper-col .competence-name .competence-category {
+  font-size: 14px;
+  margin: 0 6px;
+  background: #fff;
+  color: #184e8d;
+  padding: 5px 8px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+.wrapper .upper-col .competence-description {
+  color: rgba(255,255,255,0.85);
+}
+
+.progress {
+    height: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	 	max-width: 420px;
+}
+
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #f9d161;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+
+.wrapper .bottom-col {
+	backgrpund: #f2f7fd;
+}
+
+.wrapper .bottom-col .card {
+	padding: 30px;
+	max-width: 420px;
+	box-shadow: 0 0 35px rgba(0,0,0,0.12);
+	background: #fff;
+	border: 1px solid #eaeaea;
+	max-height: 880px;
+	overflow: auto;
+}
+
+.wrapper .bottom-col .card .card-heading {
+	text-transform: uppercase;
+	font-size: 20px;
+	color: #184e8d;
+	margin-bottom: 20px;
+}
+
+.wrapper .bottom-col .category-list {
+	margin-bottom: 20px;
+}
+
+.wrapper .bottom-col .category-list .list-title {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.wrapper .bottom-col .category-list ol {
+	margin: 10px 0 10px 20px;
+}
+
+.wrapper .bottom-col .category-list ol li {
+	line-height: 1.8;
+}
+
+.wrapper .bottom-col .nav-area {
+	margin: 20px 0;
+}
+
+.wrapper .bottom-col .nav-area .btn+.btn {
+	margin-left: 20px;
+}
+
+.wrapper .bottom-col .comp-rating-box {
+	margin-bottom: 20px;
+	max-width: 1000px;
+}
+
+.wrapper .bottom-col .comp-rating-box .rating-desc {
+	text-align: center;
+	text-transform: uppercase;
+	color : #777;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+.wrapper .bottom-col .comp-rating-box .history .list-inline > li {
+	vertical-align: middle;
+}
+
+.wrapper .bottom-col .comp-rating-box .history .list-inline .year-box {
+	background: #fff;
+	border: 1px solid #eaeaea;
+}
+
+.wrapper .bottom-col .comp-rating-box .history .list-inline .year-box .yr {
+	color: rgba(255,255,255,0.85);
+	padding: 5px 10px;
+	background: #aaaeb3;
+	display: inline-block;
+	position: relative;
+}
+
+.wrapper .bottom-col .comp-rating-box .history .list-inline .year-box .yr:after {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: #aaaeb3;
+	position: absolute;
+	right: -5px;
+	top: 10px;
+	transform: rotate(45deg);
+}
+
+.wrapper .bottom-col .comp-rating-box .history .list-inline .year-box .rate {
+	padding: 5px 20px;
+	display: inline-block;
+}
+
+.wrapper .bottom-col .comp-rating-box .rating-box {
+	display: table;
+	width: 100%;
+	border: 1px solid #ddd;
+	background: #fff;
+	border-radius: 4px;
+	margin: 40px 0;
+}
+
+.wrapper .bottom-col .comp-rating-box .rating-box .rating-cell {
+	display: table-cell;
+	text-align: center;
+}
+
+.wrapper .bottom-col .comp-rating-box .rating-box .rating-cell+.rating-cell {
+	border-left: 1px solid #dadada;
+}
+
+.wrapper .bottom-col .comp-rating-box .rating-box .rating-cell label {
+	width: 100%;
+	cursor: pointer;
+	padding: 20px 10px;
+	font-size: 22px;
+	font-weight: 500;
+	margin: 0;
+}
+
+.wrapper .bottom-col .comp-rating-box .rating-box .rating-cell > input {
+	display: none;
+}
+
+.wrapper .bottom-col .comp-rating-box .rating-box .rating-cell > input[type="radio"]:checked +label {
+	background: #f9d161;
+	color: #fff;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/tempUser/template.xhtml">
+
+	<ui:define name="title">
+		<title>choix de l'evaluation</title>
+	</ui:define>
+
+	<ui:define name="content">
+	
+
+		<div class="container">
+
+
+<style>
+.choix-form 
+{
+	width: 360px;
+	background: #fffff;
+	height: 0px;
+	padding: 80px 40px;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	transform: translate(-50%, -50%);
+}
+.img
+{
+left:40%;
+transform: translateX(100%);
+}
+</style>
+
+<h:form class="img">
+<h:commandLink  action="#{loginBean.doLogout()}">
+<img src="../../img/exit.png"/> 
+</h:commandLink>
+</h:form>
+
+			<h1>Choisir le type d'evaluation</h1>
+			
+			
+			
+			<h:form class="choix-form">
+			
+			
+				<!-- self eval-->
+				<div class="row">
+				<h:commandLink action="SelfEvalE">
+					<img src="../../img/ingenieur.png" /> 		
+				</h:commandLink>
+				</div>
+				<div class="row">
+					<small>*Evaluation personelle</small>
+				</div>
+			
+<br></br>
+<br></br>
+<br></br>
+
+
+				<!-- 360 eval-->
+				<div class="row">
+				<h:commandLink action="Team_Eval">
+					<img src="../../img/team.png"/> 
+				</h:commandLink>
+				</div>
+				<div class="row">
+					<small>*Evaluation 360°</small>
+				</div>
+			</h:form>
+		</div>
+
+
+
+
+		
+
+	</ui:define>
+
+
+</ui:composition>

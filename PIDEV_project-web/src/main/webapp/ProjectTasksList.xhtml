@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/mobile"
+	template="/WEB-INF/tempUser/template.xhtml">
+
+	<ui:define name="title">
+		<title>Projects</title>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+		</h:form>
+
+
+
+
+		<div class="card card-default">
+			<h:form enctype="multipart/form-data">
+
+				<div class="card-header">Task list of the project #{taskBean.project.title} managed By #{taskBean.project.ownedBy.nom} #{taskBean.project.ownedBy.prenom} </div>
+				<div class="card-body">
+					<!-- START table-responsive-->
+
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Title</th>
+                                    <th>Description</th>
+                                    <th>cost</th>
+                                    <th>Speciality</th>
+									<th>State</th>
+                                    <th>CreatedAt</th>
+                                    <th>DeadLine</th>
+		                            <th>Assigned to</th>
+		                            <th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<ui:repeat value="#{taskBean.tasks}" var="item">
+									<tr>
+										<td>#{item.id}</td>
+										<td>#{item.title}</td>
+										<td>#{item.description}</td>
+										<td>#{item.cost}</td>
+										<td>#{item.spec}</td>
+										<td>#{item.state}</td>
+										<td>#{item.createdAt}</td>
+										<td>#{item.deadLine}</td>
+										<td>#{item.assignment}</td>
+										<td>
+							<h:commandButton class="btn btn-info" value="Remove"
+							action="#{taskBean.remove(item)}" />
+							<h:commandButton class="btn btn-info" value="manage"
+							action="#{taskBean.manage(item)}" />
+										</td>
+									</tr>
+								</ui:repeat>
+
+							</tbody>
+						</table>
+
+					</div>
+					
+				</div>
+			</h:form>
+		</div>
+
+		
+
+
+
+<div class="card-body">
+<p>Add New Task</p>
+					<h:form enctype="multipart/form-data">
+					
+					<div class="form-group">
+							<label>Title</label>
+							<h:inputText class="form-control" type="text"
+								value="#{taskBean.title}" />
+						</div>
+						
+						<div class="form-group">
+							<label>Cost</label>
+							<h:inputText class="form-control" type="text"
+								value="#{taskBean.cost}" />
+						</div>
+						
+						<div class="form-group">
+							<label>Description of task</label>
+							<h:inputText class="form-control" type="text"
+								value="#{taskBean.description}" />
+						</div>
+						
+						<div class="form-group">
+							<label>Speciality</label>
+							<h:selectOneMenu class="custom-select custom-select-sm"
+								value="#{taskBean.spec}">
+								<f:selectItem itemLabel="Choose speciality" />
+								<f:selectItems value="#{data.specialites}" />
+							</h:selectOneMenu>
+						</div>
+
+
+						<h:commandButton class="btn btn-info" value="Add new task"
+							action="#{taskBean.addTask()}" />
+							
+							
+
+					</h:form>
+				</div>
+
+	</ui:define>
+
+
+</ui:composition>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/tempRH/template.xhtml">
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"
+		type="text/javascript"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
+		type="text/javascript"></script>
+	<link
+		href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+		rel="Stylesheet" type="text/css" />
+
+	<ui:define name="title">
+		<title>EQUIPE ADVYTEAM</title>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+		</h:form>
+
+		<div class="card b">
+
+			<div class="card-body">
+				<h:form enctype="multipart/form-data">
+		
+					<div class="form-group">
+						<label>Title</label>
+						<h:inputText class="form-control" type="text"
+							value="#{projectBean.title}" />
+					</div>
+
+					<div class="form-group">
+						<label>Budget</label>
+						<h:inputText class="form-control" type="text"
+							value="#{projectBean.budget}" />
+					</div>
+				
+					<div class="form-group">
+						<label>Client</label>
+						<h:inputText class="form-control" type="text"
+							value="#{projectBean.clientName}" />
+					</div>
+					
+					<div class="form-group">
+						<label>Additional information</label>
+						<h:inputText class="form-control" type="text"
+							value="#{projectBean.description}" />
+					</div>
+					
+						<div class="form-group">
+							<label>DeadLine(M/D/Y)</label>
+
+							<p:datePicker id="endDate" value="#{projectBean.deadLine}"/>
+								   />
+								
+
+							
+
+
+						</div>
+                         
+
+					<h:commandButton action="#{projectBean.addProjectU()}"
+						value="Add new project" />
+
+					<p>
+						<small class="text-muted">* How to add a new project easily </small>
+					</p>
+				</h:form>
+			</div>
+		</div>
+
+
+	</ui:define>
+
+
+</ui:composition>

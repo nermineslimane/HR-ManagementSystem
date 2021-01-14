@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/mobile"
+	template="/WEB-INF/tempUser/template.xhtml">
+
+	<ui:define name="title">
+		<title>Projects</title>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+		</h:form>
+
+
+
+
+		<div class="card card-default">
+			<h:form enctype="multipart/form-data">
+
+				<div class="card-header">All Advyteam projects</div>
+				<div class="card-body">
+					<!-- START table-responsive-->
+
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							
+							
+<thead>
+							
+									<tr>
+                                     <th>ID</th>
+									<th>Title</th>
+									<th>Client</th>
+									<th>Budget</th>
+									<th>Description</th>
+									<th>Created At</th>
+									<th>DeadLine</th>
+									<th>Managed By</th>
+									<th>State</th>
+									</tr>
+									</thead>
+									
+									<tbody>
+
+								<ui:repeat value="#{projectBean.projects}" var="item">
+									<tr>
+										<td>#{item.id}</td>
+										<td>#{item.title}</td>
+										<td>#{item.clientName}</td>
+										
+										<td>#{item.budget}</td>
+										<td>#{item.description}</td>
+										<td>#{item.createdAt}</td>
+										<td>#{item.deadLine}</td>
+										<td>#{item.ownedBy.nom} #{item.ownedBy.prenom}</td>
+										<td>#{item.state}</td>
+									</tr>
+								</ui:repeat>
+
+							</tbody>
+								
+						</table>
+
+					</div>
+					
+				</div>
+			</h:form>
+
+		</div>
+
+	</ui:define>
+
+
+</ui:composition>

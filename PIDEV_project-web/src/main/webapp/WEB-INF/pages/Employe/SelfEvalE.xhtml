@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/tempUser/template.xhtml"
+	   xmlns:f="http://java.sun.com/jsf/core"
+	    xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="title">
+		<title>Evaluation personnelle</title>
+	</ui:define>
+
+<ui:define name="content">
+
+
+<h1>Evaluation personnelle</h1>
+
+		<div class="p-grid">
+			<div class="p-col-6">
+				<div class="box">
+					<label for="exampleInputEmail1">Titre Evaluation</label>
+				</div>
+			</div>
+			<div class="p-col-6">
+				
+				<div class="box">
+				<h:message for="validate-login" style="color:red" />
+					<h:inputText type="text" class="form-control"
+						value="#{EvaluationBean.titre_eval}" aria-describedby="emailHelp"
+						placeholder="Entrer un Titre d'evaluation"
+						required="true" requiredMessage="Titre vide" name="titre"
+						id="validate-form">
+
+					</h:inputText>
+				</div>
+			</div>
+
+
+			<div class="p-col-6">
+
+				<div class="box">
+					<label for="exampleInputPassword1">Description de
+						l'evaluation </label>
+				</div>
+			</div>
+			<div class="p-col-6">
+				<h:message for="validate-login" style="color:red" />
+				<div class="box">
+					<h:inputTextarea class="form-control" id="validate-form"
+						placeholder="description" name="desc"
+						value="#{EvaluationBean.desc_eval}"
+						required="true" requiredMessage="Description vide">
+					</h:inputTextarea>
+				</div>
+			</div>
+
+
+			<div class="p-col-6">
+				<div class="box">
+					<label for="exampleInputPassword1">Votre Nom</label>
+				</div>
+				<h:selectOneMenu class="custom-select custom-select-sm"
+										value="#{EvaluationBean.selectUserById}">
+										<f:selectItems value="#{EvaluationBean.users}" var="user"
+											itemValue="#{user.id}" itemLabel="#{user.nom}" />
+					</h:selectOneMenu>
+	
+					
+				</div>
+			</div>
+	
+	<h1>Formulaire D'Evaluation </h1>
+<p>Vous devez respecter la grille d’évaluation suivante</p>
+<img src="../../img/grille d'evaluation.png"/>
+
+		<p:panelGrid columns="5" layout="grid"> 
+
+			<h:form class="text-center border border-light p-5">
+			
+			
+			
+			<!-- Planning -->
+
+				<h1>Planning</h1>
+			
+			<h:panelGrid columns="4" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value="Fixe des objectifs clairs et réalistes, en travaillant avec les autres pour assurer la compréhension et l’accord"></h:outputText>
+
+
+<h:outputLabel></h:outputLabel>
+
+					<p:selectOneRadio  unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2" />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3" /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+		
+				</h:panelGrid>
+				
+				
+				
+				<br></br>
+				<br></br>
+				<h:panelGrid columns="4" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value="Identifie et concentre ses efforts sur les principales priorités"></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2" />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3" /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				<br></br>
+				<br></br>
+				<h:panelGrid columns="4" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value="Efficace pour gérer son temps, assumer une charge de travail appropriée et fournir des estimations raisonnables "></h:outputText>
+
+					<p:selectOneRadio  unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				
+				
+				
+				<!-- Delivering -->
+
+				<h1>Livrer</h1>
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value="Productif à la fois seul et en groupe"></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				
+				<br></br>
+				<br></br>
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+				
+						<h:outputText value="Communique les progrès et met en évidence les problèmes ou les changements au plan au début"></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value="
+					Efficace pour identifier les problèmes, les décomposer et proposer des solutions"></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value="Techniquement compétent - capable de produire un travail de qualité et d'aider les autres comme prévu dans leur rôle"></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				<h1>Analyse et prise de décision</h1>
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				
+				
+								<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+				
+						<h:outputText value=" Fournit une analyse claire menant à des décisions logiques, éclairées et objectives "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value="Prend de bonnes décisions en utilisant les informations disponibles et un nombre approprié de recherches supplémentaires "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Embrasse les opportunités de changement lorsque bénéfique pour l'équipe / l'organisation "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Identifie et considère des solutions innovantes le cas échéant "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+
+
+
+
+<h1>Communication</h1>
+<br></br>
+				<br></br>
+				<br></br>
+				
+
+<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Bon à l'écoute et à la compréhension des autres "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				
+				
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Communique les points de vue, les idées et les questions de manière claire et concise (verbalement et par écrit) "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Donne une impression positive et professionnelle "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+
+<h1>Développement personnel</h1>
+<br></br>
+				<br></br>
+				<br></br>
+				
+
+<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Recherche activement les réactions des autres sur leur propre performance  "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				
+				
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Identifie les domaines de développement personnel "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Fait preuve d'auto-développement, avec une amélioration visible "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+				
+<h1>Travailler avec les autres</h1>
+<br></br>
+				<br></br>
+				<br></br>
+				
+
+<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Partage son expertise pour aider l'organisation au sens large  "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				
+				
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Donne des informations qui aident les autres à se développer "></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+				
+				
+				<h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
+					
+						<h:outputText value=" Capable de résoudre de manière professionnelle les différends entre individus et équipes"></h:outputText>
+
+					<p:selectOneRadio   unselectable="true" value="#{EvaluationBean.score_self}">
+   									<f:selectItem  	itemLabel = " 1" itemValue = "1"/> 
+   									<f:selectItem 	itemLabel = " 2" itemValue = "2"  />
+   									<f:selectItem 	itemLabel = " 3" itemValue = "3"  /> 
+   									<f:selectItem  	itemLabel = " 4" itemValue = "4"/>
+   									<f:selectItem  	itemLabel = " 5" itemValue = "5"/>
+					</p:selectOneRadio>
+				
+				</h:panelGrid>
+				
+				<br></br>
+				<br></br>
+				<br></br>
+
+
+
+
+
+
+
+			
+								<h:commandButton  action="#{EvaluationBean.addEvaluationE()}" class="btn btn-info btn-block" value="Ajouter
+				Evaluation"	onclick="if (!confirm('Evaluation ajouter avec success')) return false"/>
+	                   
+			</h:form>
+	
+	</p:panelGrid>
+		
+
+
+			
+
+
+
+
+
+
+
+
+
+
+	</ui:define>
+
+
+</ui:composition>
